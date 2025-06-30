@@ -2,7 +2,13 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      backdropBlur: {
+      sm: '4px',
+      DEFAULT: '12px',
+      md: '20px',
+    },
+    },
   },
   plugins: [],
 };

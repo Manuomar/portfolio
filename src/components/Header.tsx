@@ -19,7 +19,7 @@ const Header: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      
+
       const sections = navigation.map(nav => nav.href.substring(1));
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
@@ -54,11 +54,11 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'glass-simple shadow-lg' 
-        : 'bg-transparent'
-    }`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'glass-simple shadow-lg' : 'bg-transparent'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -66,9 +66,7 @@ const Header: React.FC = () => {
             <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
               <User className="w-6 h-6 text-white" />
             </div>
-            <div className="text-xl font-bold text-primary">
-              Manu Omar
-            </div>
+            <div className="text-xl font-bold text-primary">Manu Omar</div>
           </div>
 
           {/* Desktop Navigation */}
@@ -112,9 +110,9 @@ const Header: React.FC = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - FULL GLASS BACKGROUND */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-custom">
+          <div className="md:hidden py-6 px-6 glass-simple backdrop-blur-lg bg-white/10 border-t border-custom rounded-b-xl shadow-lg">
             <nav className="flex flex-col space-y-2">
               {navigation.map((item) => (
                 <button
