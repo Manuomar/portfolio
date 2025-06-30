@@ -1,14 +1,33 @@
-
 import React, { useState, useEffect } from 'react';
-import { ExternalLink, Github, ChevronLeft, ChevronRight, Star, Zap, Code, Eye, X } from 'lucide-react';
+import {
+  ExternalLink, Github,
+  ChevronLeft, ChevronRight,
+  Eye, X
+} from 'lucide-react';
 
-const Projects = () => {
-  const [currentFeaturedSlide, setCurrentFeaturedSlide] = useState(0);
-  const [currentOtherSlide, setCurrentOtherSlide] = useState(0);
-  const [selectedProject, setSelectedProject] = useState(null);
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  longDescription: string;
+  image: string;
+  technologies: string[];
+  githubUrl: string;
+  liveUrl?: string;
+  featured: boolean;
+  category: string;
+  status: string;
+};
 
-  const projects = [
-    {
+const Projects: React.FC = () => {
+  const [currentFeatured, setCurrentFeatured] = useState(0);
+  const [currentOther, setCurrentOther] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const projects: Project[] = [
+    // ... (your same project array from above) ...
+     {
       id: 1,
       title: 'BookShop',
       description: 'Full-stack MERN application with user authentication, product management',
@@ -101,71 +120,56 @@ const Projects = () => {
     },
   ];
 
-  const featuredProjects = projects.filter((p) => p.featured);
-  const otherProjects = projects.filter((p) => !p.featured);
+  const featured = projects.filter(p => p.featured);
+  const others = projects.filter(p => !p.featured);
+  const totalOther = Math.ceil(others.length / itemsPerPage);
 
-  const getStatusColor = (status) => {
-    switch (status) {
-      case 'completed': return 'bg-green-500/20 text-green-400 border-green-500/30';
-      case 'in-progress': return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30';
-      case 'planned': return 'bg-blue-500/20 text-blue-400 border-blue-500/30';
-      default: return 'bg-gray-500/20 text-gray-400 border-gray-500/30';
-    }
-  };
+  useEffect(() => {
+    const onResize = () => {
+      const w = window.innerWidth;
+      setItemsPerPage(w < 640 ? 1 : w < 1024 ? 2 : 3);
+      setCurrentOther(0);
+    };
+    onResize();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
 
-  const nextFeatured = () => {
-    setCurrentFeaturedSlide((prev) => (prev + 1) % featuredProjects.length);
-  };
-  const prevFeatured = () => {
-    setCurrentFeaturedSlide((prev) => (prev - 1 + featuredProjects.length) % featuredProjects.length);
-  };
-
-  const itemsPerPage = 3;
-  const totalSlides = Math.ceil(otherProjects.length / itemsPerPage);
-
-  const prevSlide = () => {
-    setCurrentOtherSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
-  const nextSlide = () => {
-    setCurrentOtherSlide((prev) => (prev + 1) % totalSlides);
-  };
-
-  const visibleOtherProjects = otherProjects.slice(
-    currentOtherSlide * itemsPerPage,
-    currentOtherSlide * itemsPerPage + itemsPerPage
+  const visibleOthers = others.slice(
+    currentOther * itemsPerPage,
+    currentOther * itemsPerPage + itemsPerPage
   );
 
   return (
-    <section className="py-20 bg-dark relative overflow-hidden">
+    <section className="py-20 bg-dark text-white">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-white mb-4">Featured Projects</h2>
-        </div>
-
+        {/* 🔥 Featured Projects */}
+        <h2 className="text-5xl font-bold text-center mb-8">Featured Projects</h2>
         <div className="relative rounded-2xl overflow-hidden mb-24">
-          <div className="carousel-track" style={{ transform: `translateX(-${currentFeaturedSlide * 100}%)`, transition: 'transform 0.5s ease' }}>
-            {featuredProjects.map((project) => (
-              <div key={project.id} className="carousel-slide">
+          <div
+            className="carousel-track flex transition-transform duration-500"
+            style={{ transform: `translateX(-${currentFeatured * 100}%)` }}
+          >
+            {featured.map((p) => (
+              <div key={p.id} className="carousel-slide min-w-full">
                 <div className="grid lg:grid-cols-2 gap-8 items-center p-8 bg-white/5 rounded-xl">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-64 lg:h-80 object-cover rounded-xl"
-                  />
+                  <img src={p.image} alt={p.title} className="w-full h-64 lg:h-80 object-cover rounded-xl" />
                   <div className="space-y-4">
-                    <h4 className="text-2xl font-bold text-white">{project.title}</h4>
-                    <p className="text-gray-300">{project.description}</p>
+                    <h4 className="text-2xl font-bold text-white">{p.title}</h4>
+                    <p className="text-gray-300">{p.description}</p>
                     <div className="flex gap-2 flex-wrap">
-                      {project.technologies.map((tech, i) => (
-                        <span key={i} className="bg-blue-500/10 text-blue-300 px-3 py-1 rounded-full text-sm">{tech}</span>
+                      {p.technologies.map((tech, i) => (
+                        <span key={i} className="bg-blue-500/10 text-blue-300 px-3 py-1 rounded-full text-sm">
+                          {tech}
+                        </span>
                       ))}
                     </div>
                     <div className="flex gap-4">
-                      <a href={project.githubUrl} className="text-blue-400 flex items-center space-x-2">
+                      <a href={p.githubUrl} className="text-blue-400 flex items-center space-x-2">
                         <Github size={16} /> <span>Code</span>
                       </a>
-                      {project.liveUrl && (
-                        <a href={project.liveUrl} className="text-green-400 flex items-center space-x-2">
+                      {p.liveUrl && (
+                        <a href={p.liveUrl} className="text-green-400 flex items-center space-x-2">
                           <ExternalLink size={16} /> <span>Live</span>
                         </a>
                       )}
@@ -175,45 +179,49 @@ const Projects = () => {
               </div>
             ))}
           </div>
-
-          <button onClick={prevFeatured} className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 p-2 rounded-full">
-            <ChevronLeft size={24} className="text-white" />
+          <button
+            onClick={() =>
+              setCurrentFeatured((prev) =>
+                prev === 0 ? featured.length - 1 : prev - 1
+              )
+            }
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 p-2 rounded-full"
+          >
+            <ChevronLeft size={24} />
           </button>
-          <button onClick={nextFeatured} className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 p-2 rounded-full">
-            <ChevronRight size={24} className="text-white" />
+          <button
+            onClick={() =>
+              setCurrentFeatured((prev) => (prev + 1) % featured.length)
+            }
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 p-2 rounded-full"
+          >
+            <ChevronRight size={24} />
           </button>
         </div>
 
-        <h2 className="text-4xl font-bold text-white text-center mb-12">More Projects</h2>
-        <div className="relative">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {visibleOtherProjects.map((project) => (
-              <div key={project.id} className="bg-white/5 p-4 rounded-xl shadow-md">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                />
-                <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
-                <p className="text-gray-400 text-sm mb-4">{project.description}</p>
+        {/* 👍 More Projects */}
+        <h2 className="text-4xl font-bold text-center mb-8">More Projects</h2>
+        <div className="relative mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500">
+            {visibleOthers.map((p) => (
+              <div key={p.id} className="bg-white/10 p-4 rounded-xl shadow-md">
+                <img src={p.image} alt={p.title} className="w-full h-40 object-cover rounded-md mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">{p.title}</h3>
+                <p className="text-gray-400 text-sm mb-4">{p.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-2 py-1 text-xs bg-blue-500/10 text-blue-300 rounded"
-                    >
+                  {p.technologies.map((tech, i) => (
+                    <span key={i} className="text-xs bg-blue-500/10 text-blue-300 px-2 py-1 rounded">
                       {tech}
                     </span>
                   ))}
                 </div>
                 <div className="flex justify-between items-center">
-                  <a href={project.githubUrl} className="text-blue-400 flex items-center space-x-1">
-                    <Github size={16} />
-                    <span>Code</span>
+                  <a href={p.githubUrl} className="text-blue-400 flex items-center space-x-1">
+                    <Github size={16} /> <span>Code</span>
                   </a>
                   <button
-                    onClick={() => setSelectedProject(project)}
-                    className="text-purple-400 hover:text-purple-300 transition-colors"
+                    onClick={() => setSelectedProject(p)}
+                    className="text-purple-400 hover:text-purple-300 transition"
                   >
                     <Eye size={16} />
                   </button>
@@ -221,38 +229,45 @@ const Projects = () => {
               </div>
             ))}
           </div>
-
           <button
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/10 p-2 rounded-full"
+            onClick={() => setCurrentOther((prev) => (prev - 1 + totalOther) % totalOther)}
+            className="absolute top-1/2 left-0 -translate-y-1/2 bg-white/10 p-2 rounded-full"
           >
-            <ChevronLeft size={24} className="text-white" />
+            <ChevronLeft size={24} />
           </button>
           <button
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/10 p-2 rounded-full"
+            onClick={() => setCurrentOther((prev) => (prev + 1) % totalOther)}
+            className="absolute top-1/2 right-0 -translate-y-1/2 bg-white/10 p-2 rounded-full"
           >
-            <ChevronRight size={24} className="text-white" />
+            <ChevronRight size={24} />
           </button>
         </div>
 
+        {/* 🔍 Detail Modal */}
         {selectedProject && (
           <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-white/10 p-6 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-              <div className="relative">
-                <img src={selectedProject.image} alt={selectedProject.title} className="w-full h-64 object-cover rounded-t-xl" />
-                <button
-                  onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 p-2 bg-white/10 rounded-full"
-                >
-                  <X size={20} className="text-white" />
-                </button>
-              </div>
-              <h3 className="text-2xl font-bold text-white mt-4">{selectedProject.title}</h3>
-              <p className="text-gray-300 mt-2">{selectedProject.description}</p>
-              <div className="flex gap-2 mt-4 flex-wrap">
+            <div className="relative bg-white/10 p-6 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.title}
+                className="w-full h-64 object-cover rounded-t-xl"
+              />
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 p-2 bg-white/10 rounded-full"
+              >
+                <X size={20} />
+              </button>
+              <h3 className="text-2xl font-bold mt-4">{selectedProject.title}</h3>
+              <p className="text-gray-300 mt-2">{selectedProject.longDescription}</p>
+              <div className="flex flex-wrap gap-2 mt-4">
                 {selectedProject.technologies.map((tech, i) => (
-                  <span key={i} className="bg-blue-500/10 text-blue-300 px-3 py-1 rounded-full text-sm">{tech}</span>
+                  <span
+                    key={i}
+                    className="text-sm bg-blue-500/10 text-blue-300 px-3 py-1 rounded-full"
+                  >
+                    {tech}
+                  </span>
                 ))}
               </div>
               <div className="flex gap-4 mt-4">
@@ -260,7 +275,10 @@ const Projects = () => {
                   <Github size={20} /> <span>Code</span>
                 </a>
                 {selectedProject.liveUrl && (
-                  <a href={selectedProject.liveUrl} className="text-green-400 flex items-center space-x-2">
+                  <a
+                    href={selectedProject.liveUrl}
+                    className="text-green-400 flex items-center space-x-2"
+                  >
                     <ExternalLink size={20} /> <span>Live</span>
                   </a>
                 )}
@@ -274,4 +292,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
