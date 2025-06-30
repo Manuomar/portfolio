@@ -60,8 +60,8 @@ const Projects: React.FC = () => {
       longDescription: 'An educational tool that helps students and developers understand complex algorithms through interactive visualizations. Features include sorting algorithms, pathfinding algorithms, data structure operations, and customizable parameters for learning optimization.',
       image: 'https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg',
       technologies: ['React','TypeScript','TailwindCSS','Formspree'],
-      githubUrl: '#',
-      liveUrl: '#',
+      githubUrl: 'https://github.com/Manuomar/portfolio.git',
+      liveUrl: 'https://portfolio-theta-pied-77.vercel.app/',
       featured: true,
       category: 'Web App',
       status: 'completed'
