@@ -126,7 +126,7 @@ const Hero: React.FC = () => {
             {[
               { icon: Github, href: 'https://github.com/manuomar', label: 'GitHub', color: 'hover:text-gray-300' },
               { icon: Linkedin, href: 'https://linkedin.com/in/manuomar', label: 'LinkedIn', color: 'hover:text-blue-300' },
-              { icon: Mail, href: 'mailto:manu.omar@example.com', label: 'Email', color: 'hover:text-red-300' },
+              { icon: Mail, href: 'mailto:manuomar0126@gmail.com', label: 'Email', color: 'hover:text-red-300' },
               { icon: Code, href: 'https://leetcode.com/manuomar', label: 'LeetCode', color: 'hover:text-orange-300' },
             ].map((social, index) => (
               <div key={index} className={`perspective-card animate-scale-in stagger-${index + 1}`}>
