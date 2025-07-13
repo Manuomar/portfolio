@@ -46,12 +46,21 @@ const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+  // const handleResumeDownload = () => {
+  //   const link = document.createElement('a');
+  //   link.href = '../../assests/one page cv.pdf';
+  //   link.download = 'Manu_Omar_Resume.pdf';
+  //   link.click();
+  // };
   const handleResumeDownload = () => {
-    const link = document.createElement('a');
-    link.href = '../../assests/one page cv.pdf';
-    link.download = 'Manu_Omar_Resume.pdf';
-    link.click();
-  };
+  const link = document.createElement('a');
+  link.href = 'https://drive.google.com/uc?export=download&id=1JJIMfni_0iFrFDGHmiJpoHRCYRQj8h6E';
+  link.download = 'Manu_Omar_Resume.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 
   return (
     <header
