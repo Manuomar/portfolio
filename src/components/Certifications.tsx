@@ -15,14 +15,14 @@ import { BackgroundLines } from "../components/ui/background-lines";
 
 const Certifications: React.FC = () => {
   const certifications = [
+    // your certifications array 
     {
       title: ". NET Certification",
       issuer: "IIT Kanpur",
       date: "2024",
       credentialId: "NA",
-      description:
-        "Comprehensive course covering advanced algorithms, complexity analysis, and optimization techniques.",
-      skills: [".net", "C#", "Web development"],
+       description: "Completed a comprehensive course on .NET framework covering C#, web development, and application deployment.",
+   skills: [".net", "C#", "Web development"],
       verifyUrl: "https://media.licdn.com/dms/image/v2/D562DAQG5DeheLLRguA/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1720964378691?e=1751922000&v=beta&t=fovDaUaEXDApEXbnklCGGzI5Y1j0FT12Unf7h9YDfzE",
       featured: true,
     },
@@ -31,9 +31,8 @@ const Certifications: React.FC = () => {
       issuer: "IIT Bombay",
       date: "2025",
       credentialId: "ecell2021",
-      description:
-        "Complete web development course covering MERN stack, database design, and deployment strategies.",
-      skills: ['Entrepreneurship',"Team work",'Communication','Connection Building'],
+     description: "Ranked in the Top 50 of IIT Bombay's National Entrepreneurship Challenge 2024 Advanced Track, demonstrating strong leadership, innovation, and team collaboration.",
+  skills: ['Entrepreneurship',"Team work",'Communication','Connection Building'],
       verifyUrl: "https://media.licdn.com/dms/image/v2/D562DAQGRgQoTxVf_Tw/profile-treasury-image-shrink_800_800/B56ZXmfBYuGUAY-/0/1743328649019?e=1751922000&v=beta&t=H8lGLtwsUdQhvEQGjRtQ7MsyEXBn0SDfH4M_afmVOz4",
       featured: true,
     }, {
@@ -41,9 +40,8 @@ const Certifications: React.FC = () => {
       issuer: "IIT Bombay",
       date: "2025",
       credentialId: "ecell2021",
-      description:
-        "Complete web development course covering MERN stack, database design, and deployment strategies.",
-      skills: ['Entrepreneurship',"Team work",'Communication','Connection Building'],
+    description: "Secured Top 50 rank in IIT Bombay's National Entrepreneurship Challenge, showcasing startup strategy, leadership, and team collaboration.",
+   skills: ['Entrepreneurship',"Team work",'Communication','Connection Building'],
       verifyUrl: "https://media.licdn.com/dms/image/v2/D562DAQEQMkQ3AXXx8g/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1720823384948?e=1751922000&v=beta&t=GWGPGr4lb5Gyy0wvM1wSzIponEnpIKbXGWbliPW1raw",
       featured: true,
     },
@@ -52,8 +50,8 @@ const Certifications: React.FC = () => {
       issuer: "IIT Guwahati",
       date: "2024",
       credentialId: "4ce14e35-007b-4cd1-ae06-bb27e633e3f1",
-      description: "Introduction to machine learning concepts, algorithms, and practical applications.",
-      skills: ['Entrepreneurship',"Team work",'Communication','Connection Building'],
+       description: "Participated in a national initiative focused on entrepreneurship, startup mindset, teamwork, and networking.",
+       skills: ['Entrepreneurship',"Team work",'Communication','Connection Building'],
       verifyUrl: "https://certificate.givemycertificate.com/c/4ce14e35-007b-4cd1-ae06-bb27e633e3f1",
       featured: false,
     },
@@ -63,7 +61,7 @@ const Certifications: React.FC = () => {
       date: "2025",
       credentialId: "CnvhE4QXxGmQ2vyYK",
       description:
-        "Comprehensive AWS cloud services training including EC2, S3, Lambda, and RDS.",
+        "Completed a virtual job simulation focused on data cleaning, visualization, and insights using Excel, Python, and Tableau.",
       skills: ['Tableau' , 'Excel','python'],
       verifyUrl: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_WdevgiGF76qnyHks2_1744720219925_completion_certificate.pdf",
       featured: false,
@@ -73,8 +71,7 @@ const Certifications: React.FC = () => {
       issuer: "HP LIFE",
       date: "2025",
       credentialId: "1ec90734-33d9-40f1-8cd4-0acc804e773d",
-      description:
-        "Essential cybersecurity concepts, threat analysis, and security implementation strategies.",
+      description: "Introduction to Artificial Intelligence concepts, applications, and its impact across industries.",
       skills: ["AI basics"],
       verifyUrl: "https://media.licdn.com/dms/image/v2/D562DAQFfkHWhG2RoQQ/profile-treasury-image-shrink_800_800/B56ZbLm7inGoAY-/0/1747172704545?e=1751922000&v=beta&t=rJihPt_eI90TktFwRHhXHuFAybimVm7TALbjBvQ-a_k",
       featured: false,
@@ -84,8 +81,7 @@ const Certifications: React.FC = () => {
       issuer: "Coding Ninjas",
       date: "2024",
       credentialId: "NA",
-      description:
-        "Advanced database concepts including normalization, query optimization, and database design.",
+      description: "Completed foundational C++ course covering basics, object-oriented programming, and data structures & algorithms.",
       skills: ['C++ basics' , 'DSA'],
       verifyUrl: "https://media.licdn.com/dms/image/v2/D562DAQEI5Ix_JZMLFw/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1720823729281?e=1751922000&v=beta&t=neSvuV8OkdfwMDnXWxvGbFE2GqlHZDMPDESI9zJwqrw",
       featured: false,
@@ -95,9 +91,8 @@ const Certifications: React.FC = () => {
       issuer: "HackerRank",
       date: "2024",
       credentialId: "2A11648A99FA",
-      description:
-        "React Native development course covering cross-platform mobile application development.",
-      skills: ['python'],
+     description: "Certified by HackerRank for foundational knowledge of Python, including data types,operations, conditionals, loops, and functions.",
+  skills: ['python'],
       verifyUrl: "https://www.hackerrank.com/certificates/2a11648a99fa",
       featured: false,
     },
@@ -106,9 +101,7 @@ const Certifications: React.FC = () => {
       issuer: "HackerRank",
       date: "2024",
       credentialId: "F012139AA384",
-      description:
-        "Advanced competitive programming techniques and algorithmic problem-solving strategies.",
-      skills: ["CSS5",'Responsive Design'],
+      description: "Certified by HackerRank for foundational knowledge of CSS, including layout, selectors,styling the UI and responsive design.", skills: ["CSS5",'Responsive Design'],
       verifyUrl: "https://www.hackerrank.com/certificates/f012139aa384",
       featured: false,
     },{
@@ -116,10 +109,19 @@ const Certifications: React.FC = () => {
       issuer: "SEBI",
       date: "2025",
       credentialId: "F012139AA384",
-      description:
-        "Advanced competitive programming techniques and algorithmic problem-solving strategies.",
+      description: "Certification in financial markets by SEBI-NISM, covering investment principles, market operations, and regulatory frameworks.",
       skills: ["financial awareness"],
       verifyUrl: "https://media.licdn.com/dms/image/v2/D5622AQFMgisv-hNc2A/feedshare-shrink_1280/B56ZeOU90JHQAk-/0/1750439551281?e=1753920000&v=beta&t=7fj0UloP-7JLAMaDL81oBvlCh5L44RTaSMPfDZwcN-I",
+      featured: false,
+    },{
+      title: "Code Clash 2.0 Hackathon",
+      issuer: "SEBI",
+      date: "2025",
+      credentialId: "N/A",
+      description:
+        "Developed Tarang, a disaster-resilient PWA for offline emergency communication, built during Code of Clash Hackathon.",
+      skills: ["Web development,PWA"],
+      verifyUrl: "https://drive.google.com/file/d/1bWKm77BrCll-SBiTce1ZyHRQotPT2VyJ/view?usp=sharingI",
       featured: false,
     },
   ];
@@ -128,7 +130,7 @@ const Certifications: React.FC = () => {
   const otherCertifications = certifications.filter((cert) => !cert.featured);
 
   return (
-    <section id="certifications" className="relative py-20 bg-black text-white overflow-hidden">
+    <section id="certifications" className="relative py-20 bg-gray-900 text-white overflow-hidden">
       <BackgroundLines className="absolute inset-0 z-0" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -156,6 +158,8 @@ const Certifications: React.FC = () => {
                     href={cert.verifyUrl}
                     className="text-gray-400 hover:text-blue-600 transition-colors"
                     title="Verify Certificate"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <ExternalLink className="w-5 h-5" />
                   </a>
@@ -200,11 +204,17 @@ const Certifications: React.FC = () => {
         {/* Additional Certifications Carousel */}
         <div className="relative">
           <h3 className="text-2xl font-semibold text-white mb-8">Additional Certifications</h3>
-          <div className="absolute -left-6 top-1/2 transform -translate-y-1/2 z-10 swiper-button-prev cursor-pointer bg-white border shadow p-2 rounded-full hover:bg-blue-50">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6" /></svg>
+
+          {/* Custom Navigation Buttons */}
+          <div className="swiper-button-prev absolute -left-10 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-gray-800 transition shadow-lg">
+            {/* <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg> */}
           </div>
-          <div className="absolute -right-6 top-1/2 transform -translate-y-1/2 z-10 swiper-button-next cursor-pointer bg-white border shadow p-2 rounded-full hover:bg-blue-50">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-blue-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 6l6 6-6 6" /></svg>
+          <div className="swiper-button-next absolute -right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-gray-800 transition shadow-lg">
+            {/* <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg> */}
           </div>
 
           <Swiper
@@ -242,6 +252,8 @@ const Certifications: React.FC = () => {
                       href={cert.verifyUrl}
                       className="text-gray-400 hover:text-blue-600 transition-colors ml-2"
                       title="Verify Certificate"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <ExternalLink className="w-4 h-4" />
                     </a>

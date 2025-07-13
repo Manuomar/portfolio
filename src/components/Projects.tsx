@@ -26,9 +26,21 @@ const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const projects: Project[] = [
-    // ... (your same project array from above) ...
-     {
+      {
       id: 1,
+      title: 'Skill swap',
+      description: 'Built a Skill Swap app with user profiles, skill-based matching, swap requests, feedback, and admin controls.',
+      longDescription: 'Developed a Skill Swap Platform enabling users to exchange skills via public profiles, search filters, and swap requests. Included features like user availability, feedback, admin moderation, and real-time swap tracking.',
+      image: 'https://i.pinimg.com/736x/75/f7/8b/75f78b7bf6905a6fd5c16988c2e295f5.jpg',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'TypeScript','Cors', 'bCrypt','JWT', 'axios'],
+      githubUrl: 'https://github.com/Manuomar/Odoo-project.git',
+      // liveUrl: '#',
+      featured: true,
+      category: 'Full Stack',
+      status: 'Completed'
+    }, 
+    {
+      id: 2,
       title: 'BookShop',
       description: 'Full-stack MERN application with user authentication, product management',
       longDescription: 'A BookShop e-commerce platform built with the MERN stack featuring user authentication, product management, and responsive design.',
@@ -41,7 +53,7 @@ const Projects: React.FC = () => {
       status: 'in-progress'
     },
     {
-      id: 2,
+      id: 3,
       title: 'AITD-alumni-association',
       description: 'A platform to connect AITD alumni and students for events, mentorship, and job opportunities.',
       longDescription: 'A web-based platform built for AITD to facilitate seamless interaction between alumni and students. Features include event announcements, alumni directory, job postings, and mentorship opportunities.',
@@ -54,7 +66,7 @@ const Projects: React.FC = () => {
       status: 'completed'
     },
     {
-      id: 3,
+      id: 4,
       title: 'Portfolio',
       description: 'Interactive web application for visualizing sorting algorithms and data structures.',
       longDescription: 'An educational tool that helps students and developers understand complex algorithms through interactive visualizations. Features include sorting algorithms, pathfinding algorithms, data structure operations, and customizable parameters for learning optimization.',
@@ -67,7 +79,7 @@ const Projects: React.FC = () => {
       status: 'completed'
     },  
       {
-      id: 4,
+      id: 5,
       title: 'Pw website ',
       description: 'A responsive clone of the PW Skills website built using HTML and Tailwind CSS, featuring a clean UI, hero section, course highlights, and responsive design.',
       longDescription: 'A responsive clone of the PW Skills website built using HTML and Tailwind CSS, featuring a clean UI, hero section, course highlights, and responsive design.',
@@ -80,7 +92,7 @@ const Projects: React.FC = () => {
       status: 'completed'
     },
     {
-      id: 5,
+      id: 6,
       title: 'Tarang ',
       description: 'Tarang – Offline Emergency Communication App using PWA',
       longDescription: 'A disaster-resilient PWA enabling offline communication without internet or cellular networks, built for emergency response scenarios.',
@@ -93,7 +105,7 @@ const Projects: React.FC = () => {
       status: 'completed'
     },
     {
-      id: 6,
+      id: 7,
       title: 'LeetMetrics ',
       description: 'A simple, intuitive interface to track coding progress by difficulty level on platforms like LeetCode.',
       longDescription: 'This simple and intuitive interface provides users with an overview of their coding journey, helping track progress by difficulty level for LeetCode problems or similar coding platforms.',
@@ -106,7 +118,7 @@ const Projects: React.FC = () => {
       status: 'completed'
     },
  {
-      id: 7,
+      id: 8,
       title: 'temperature_convertor',
       description: 'A simple tool to convert temperatures between Celsius, Fahrenheit, and Kelvin with real-time results and a user-friendly interface.',
       longDescription: 'This simple and intuitive interface provides users with an overview of their coding journey, helping track progress by difficulty level for LeetCode problems or similar coding platforms.',
@@ -141,7 +153,7 @@ const Projects: React.FC = () => {
   );
 
   return (
-    <section className="py-20 bg-dark text-white">
+    <section id="Projects" className="py-20 bg-dark text-white">
       <div className="max-w-7xl mx-auto px-4">
         {/* 🔥 Featured Projects */}
         <h2 className="text-5xl font-bold text-center mb-8">Featured Projects</h2>
@@ -185,7 +197,7 @@ const Projects: React.FC = () => {
                 prev === 0 ? featured.length - 1 : prev - 1
               )
             }
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 p-2 rounded-full"
+            className="absolute left-[-1] top-1/2 -translate-y-1/2 bg-white/10 p-2 rounded-full"
           >
             <ChevronLeft size={24} />
           </button>
@@ -193,7 +205,7 @@ const Projects: React.FC = () => {
             onClick={() =>
               setCurrentFeatured((prev) => (prev + 1) % featured.length)
             }
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 p-2 rounded-full"
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/10 p-2 rounded-full"
           >
             <ChevronRight size={24} />
           </button>

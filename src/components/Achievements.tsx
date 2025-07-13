@@ -14,7 +14,7 @@ const Achievements: React.FC = () => {
   const finalCounts = {
     problems: 400,
     certifications: 10,
-    projects: 7,
+    projects: 8,
     communities: 3,
   };
 

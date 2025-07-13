@@ -96,10 +96,10 @@ const Hero: React.FC = () => {
             </a>
 
             <a
-              href="#projects"
+              href="#Projects"
               onClick={(e) => {
                 e.preventDefault();
-                const projectsSection = document.getElementById('projects');
+                const projectsSection = document.getElementById('Projects');
                 projectsSection?.scrollIntoView({ behavior: 'smooth' });
               }}
               className="simple-button-outline group"
@@ -111,7 +111,7 @@ const Hero: React.FC = () => {
             </a>
 
             <a
-              href="/resume.pdf"
+              href="/Manu_Omar_Resume.pdf"
               download="Manu_Omar_Resume.pdf"
               className="simple-button-outline group"
             >

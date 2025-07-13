@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
           {/* Quick Links */}
           <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm">
             <a href="#about" className="text-gray-400 hover:text-white transition-colors">About</a>
-            <a href="#projects" className="text-gray-400 hover:text-white transition-colors">Projects</a>
+            <a href="#Projects" className="text-gray-400 hover:text-white transition-colors">Projects</a>
             <a href="#achievements" className="text-gray-400 hover:text-white transition-colors">Achievements</a>
             <a href="#experience" className="text-gray-400 hover:text-white transition-colors">Experience</a>
             <a href="#certifications" className="text-gray-400 hover:text-white transition-colors">Certifications</a>
