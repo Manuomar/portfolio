@@ -111,8 +111,8 @@ const Hero: React.FC = () => {
             </a>
 
             <a
-              href="public\one page cv.pdf"
-              download="manu_omar_cv.pdf"
+              href="public\resume.pdf"
+              download="resume.pdf"
               className="simple-button-outline group"
             >
               <span className="flex items-center space-x-2">
