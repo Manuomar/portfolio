@@ -110,11 +110,18 @@ const Hero: React.FC = () => {
               </span>
             </a>
 
-            <a
+            {/* <a
               href="public\resume.pdf"
               download="resume.pdf"
               className="simple-button-outline group"
-            >
+            > */}
+            <a
+            href="https://drive.google.com/uc?export=download&id=1JJIMfni_0iFrFDGHmiJpoHRCYRQj8h6E"
+             download="manu_omar_resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="simple-button-outline group"
+>
               <span className="flex items-center space-x-2">
                 <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
                 <span>Resume</span>
