@@ -83,17 +83,17 @@ const ExperienceCarousel: React.FC = () => {
           </p>
         </div>
 
-        {/* Custom Navigation Arrows */}
+        {/* Custom Navigation Arrows (hidden on mobile) */}
         <div className="relative">
           <div className="swiper-button-prev absolute -left-6 top-1/2 -translate-y-1/2 z-10 
-            w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center 
-            hover:bg-gray-800 transition shadow-lg">
-            {/* <ChevronLeft size={20} strokeWidth={2.5} /> */}
+            w-10 h-10 rounded-full bg-gray-900 text-white items-center justify-center 
+            hover:bg-gray-800 transition shadow-lg hidden md:flex">
+            <ChevronLeft size={20} strokeWidth={2.5} />
           </div>
           <div className="swiper-button-next absolute -right-6 top-1/2 -translate-y-1/2 z-10 
-            w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center 
-            hover:bg-gray-800 transition shadow-lg">
-            {/* <ChevronRight size={20} strokeWidth={2.5} /> */}
+            w-10 h-10 rounded-full bg-gray-900 text-white items-center justify-center 
+            hover:bg-gray-800 transition shadow-lg hidden md:flex">
+            <ChevronRight size={20} strokeWidth={2.5} />
           </div>
 
           <Swiper
@@ -195,4 +195,3 @@ const ExperienceCarousel: React.FC = () => {
 };
 
 export default ExperienceCarousel;
-

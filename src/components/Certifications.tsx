@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 import { BackgroundLines } from "../components/ui/background-lines";
 
 const Certifications: React.FC = () => {
-  const certifications = [
+   const certifications = [
     // your certifications array 
     {
       title: ". NET Certification",
@@ -130,7 +130,7 @@ const Certifications: React.FC = () => {
   const otherCertifications = certifications.filter((cert) => !cert.featured);
 
   return (
-    <section id="certifications" className="relative py-20 bg-gray-900 text-white overflow-hidden">
+    <section id="certifications" className="relative py-20 bg-[#2a354f] text-white overflow-hidden">
       <BackgroundLines className="absolute inset-0 z-0" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -206,15 +206,19 @@ const Certifications: React.FC = () => {
           <h3 className="text-2xl font-semibold text-white mb-8">Additional Certifications</h3>
 
           {/* Custom Navigation Buttons */}
-          <div className="swiper-button-prev absolute -left-10 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-gray-800 transition shadow-lg">
-            {/* <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="swiper-button-prev absolute -left-6 top-1/2 -translate-y-1/2 z-10 
+            w-10 h-10 rounded-full bg-white text-gray-900 hidden md:flex items-center justify-center 
+            hover:bg-gray-200 transition shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg> */}
+            </svg>
           </div>
-          <div className="swiper-button-next absolute -right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-gray-700 text-white flex items-center justify-center hover:bg-gray-800 transition shadow-lg">
-            {/* <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="swiper-button-next absolute -right-6 top-1/2 -translate-y-1/2 z-10 
+            w-10 h-10 rounded-full bg-white text-gray-900 hidden md:flex items-center justify-center 
+            hover:bg-gray-200 transition shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg> */}
+            </svg>
           </div>
 
           <Swiper
@@ -282,31 +286,6 @@ const Certifications: React.FC = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
-
-        {/* Stats */}
-        <div className="mt-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 text-white shadow-lg">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-8">Learning Journey</h3>
-            <div className="grid md:grid-cols-4 gap-6">
-              <div>
-                <div className="text-3xl font-bold mb-2">10+</div>
-                <div className="text-blue-100">Certifications</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold mb-2">4</div>
-                <div className="text-blue-100">IIT Courses</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold mb-2">500+</div>
-                <div className="text-blue-100">Learning Hours</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold mb-2">20+</div>
-                <div className="text-blue-100">Technical Skills</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
