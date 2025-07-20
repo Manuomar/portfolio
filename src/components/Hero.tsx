@@ -116,7 +116,7 @@ const Hero: React.FC = () => {
               className="simple-button-outline group"
             > */}
             <a
-            href="https://drive.google.com/uc?export=download&id=1JJIMfni_0iFrFDGHmiJpoHRCYRQj8h6E"
+            href="https://drive.google.com/file/d/1yXKoXNG92rM9I7tZcn8HMAW5j6a9j3RQ/view?usp=sharing"
              download="manu_omar_resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
