@@ -88,12 +88,12 @@ const ExperienceCarousel: React.FC = () => {
           <div className="swiper-button-prev absolute -left-6 top-1/2 -translate-y-1/2 z-10 
             w-10 h-10 rounded-full bg-gray-900 text-white items-center justify-center 
             hover:bg-gray-800 transition shadow-lg hidden md:flex">
-            <ChevronLeft size={20} strokeWidth={2.5} />
+            {/* <ChevronLeft size={20} strokeWidth={2.5} /> */}
           </div>
           <div className="swiper-button-next absolute -right-6 top-1/2 -translate-y-1/2 z-10 
             w-10 h-10 rounded-full bg-gray-900 text-white items-center justify-center 
             hover:bg-gray-800 transition shadow-lg hidden md:flex">
-            <ChevronRight size={20} strokeWidth={2.5} />
+            {/* <ChevronRight size={20} strokeWidth={2.5} /> */}
           </div>
 
           <Swiper

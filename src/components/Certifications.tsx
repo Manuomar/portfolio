@@ -209,16 +209,16 @@ const Certifications: React.FC = () => {
           <div className="swiper-button-prev absolute -left-6 top-1/2 -translate-y-1/2 z-10 
             w-10 h-10 rounded-full bg-white text-gray-900 hidden md:flex items-center justify-center 
             hover:bg-gray-200 transition shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            {/* <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
+            </svg> */}
           </div>
           <div className="swiper-button-next absolute -right-6 top-1/2 -translate-y-1/2 z-10 
             w-10 h-10 rounded-full bg-white text-gray-900 hidden md:flex items-center justify-center 
             hover:bg-gray-200 transition shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            {/* <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+            </svg> */}
           </div>
 
           <Swiper

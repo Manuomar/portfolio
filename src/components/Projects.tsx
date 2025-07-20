@@ -134,6 +134,19 @@ const Projects: React.FC = () => {
       category: 'Web App',
       status: 'completed'
     },
+    {
+      id: 9,
+      title: 'Secure File Sharing',
+      description: 'A file sharing backend project where we can upload file from system it will save in cloudinary and we can acess it using access token',
+      longDescription: 'A file sharing backend project where we can upload file from system it will save in cloudinary and we can acess it using access token',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJiqXN2rrhwJETYQOp2xQguZoQN7IDvuhuWQ&s',
+      technologies: ['Express', 'Cryptography', 'Cloudinary','JWT'],
+      githubUrl: 'https://github.com/Manuomar/file_sharing_backend.git',
+      // liveUrl: '',
+      featured: true,
+      category: 'Backend',
+      status: 'completed'
+    },
   ];
 
   const featured = projects.filter(
