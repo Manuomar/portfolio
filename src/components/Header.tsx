@@ -54,7 +54,7 @@ const Header: React.FC = () => {
   // };
   const handleResumeDownload = () => {
   const link = document.createElement('a');
-  link.href = 'https://drive.google.com/uc?export=download&id=1JJIMfni_0iFrFDGHmiJpoHRCYRQj8h6E';
+  link.href = 'https://drive.google.com/file/d/1yXKoXNG92rM9I7tZcn8HMAW5j6a9j3RQ/view?usp=sharing';
   link.download = 'Manu_Omar_Resume.pdf';
   document.body.appendChild(link);
   link.click();
